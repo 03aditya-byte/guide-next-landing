@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Career Compass Design System - Blue, Gray, White Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Background & Text */
+    --background: 220 20% 98%;
+    --foreground: 220 15% 20%;
 
+    /* Card Components */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 15% 20%;
+    
+    /* Popover Components */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand Colors - Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    --primary-light: 217 91% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Colors - Soft Gray */
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 220 15% 25%;
+    --secondary-hover: 220 13% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent Colors - Deep Blue */
+    --accent: 220 70% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 220 70% 95%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted Colors - Light Gray */
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 10% 46%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Utility Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(220 70% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(220 70% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 13% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 20% / 0.1), 0 2px 4px -1px hsl(220 15% 20% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 20% / 0.1), 0 4px 6px -2px hsl(220 15% 20% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 20% / 0.1), 0 10px 10px -5px hsl(220 15% 20% / 0.04);
+    --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +87,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme for Career Compass */
+    --background: 220 15% 8%;
+    --foreground: 220 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 15% 10%;
+    --card-foreground: 220 20% 95%;
+    
+    --popover: 220 15% 10%;
+    --popover-foreground: 220 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 15% 8%;
+    --primary-hover: 217 91% 60%;
+    --primary-light: 217 91% 15%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 20% 95%;
+    --secondary-hover: 220 15% 20%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --accent: 220 70% 55%;
+    --accent-foreground: 220 15% 8%;
+    --accent-light: 220 70% 15%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 217 91% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(220 70% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 65%) 0%, hsl(220 70% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 15% 10%) 0%, hsl(220 15% 12%) 100%);
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-glow: 0 0 20px hsl(217 91% 65% / 0.3);
   }
 }
 
@@ -100,6 +131,109 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Career Card Animation */
+  .career-card {
+    @apply bg-gradient-to-br from-card to-secondary/30 border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-primary/30;
+  }
+
+  .career-card-glow {
+    @apply career-card hover:shadow-xl;
+    box-shadow: 0 4px 6px -1px hsl(var(--border)), 0 2px 4px -1px hsl(var(--border));
+  }
+
+  .career-card-glow:hover {
+    box-shadow: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04), 0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  /* Hero Button Styles */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    box-shadow: 0 4px 15px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-hero:hover {
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.4);
+  }
+
+  /* Metric Card Animation */
+  .metric-card {
+    @apply bg-gradient-to-br from-card to-primary-light/20 border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-md hover:border-primary/20;
+  }
+
+  /* Fade In Animation */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .fade-in-delay {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  /* Profile Card Hover */
+  .profile-card {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-primary/30 cursor-pointer;
+  }
+
+  /* Navigation Link Active State */
+  .nav-link-active {
+    @apply text-primary font-semibold relative;
+  }
+
+  .nav-link-active::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
